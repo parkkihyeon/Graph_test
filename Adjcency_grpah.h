@@ -22,6 +22,7 @@ public:
 	void Insert(vector<State_node*> state);
 
 	State_node* getRoot();
+
 	// 현재 위치한 노드에서의 자식노드와 추가할 state와 같은게 있는지.
 	int Is_Have_childnode(State_node* sub_root, State_node* state);
 

@@ -22,7 +22,7 @@ void State_node::Print_State(){
 //node의 자식을 생성.
 void State_node::Create_Child(State_node *add_state){
 	this->next->push_back(add_state) ;
-	int num_of_next = this->next->size() ;
+	this->num_of_next++ ;
 };
 
 // n번째 자식을 return

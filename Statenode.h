@@ -17,7 +17,7 @@ public:
 	int num_of_next ;
 	bool leaf_node ;
 	vector<State_node*> *next ; // 공간복잡도를 위해 list 사용.
-	//	list<State_node*> *prev ;
+
 	char arr[HEIGHT_SIZE][WIDTH_SIZE] ;
 
 	State_node(char data[HEIGHT_SIZE][WIDTH_SIZE]) ;
