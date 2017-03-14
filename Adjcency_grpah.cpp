@@ -15,18 +15,21 @@ void Adjcency_grpah::Insert(vector<State_node*> state){
 		int childnode = Is_Have_childnode(now_state,add_state) ;
 
 		// 자기 자식과 같은게 있으면 그대로 이동.
-		if(childnode >= 0)
+		if(childnode >= 0){
 			now_state = now_state->NthCheck_Childnode(childnode) ;
+		}
 		// 자기 자식과 같은게 없지만 어떤 노드에 존재하면 그 노드를 next로 지정한다.
 		else {
 			State_node* check_node = Is_In_The_List_State(add_state) ;
 			if(check_node){
-				now_state->Create_Child(check_node) ;
+				now_state->Addlist_Child(check_node) ;
+				check_node->Connect_Parent(now_state) ;
 				now_state = check_node ;
 			}
 			else {
 				node_list->push_back(add_state) ;
-				now_state->Create_Child(add_state) ;
+				now_state->Addlist_Child(add_state) ;
+				add_state->Connect_Parent(now_state) ;
 				now_state = add_state ;
 			}
 		}
